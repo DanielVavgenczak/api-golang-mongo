@@ -9,26 +9,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type Director struct {
-	Name string `json:"name"`
-}
-
-type Writer struct {
-	Name string `json:"name"`
-}
-
-type Movie struct {
-	Name string `json:"name"`
-	Year string `json:"year"`
-	Directors []Director `json:"directors"`
-	Writers []Writer `json:"writers"`
-}
-
-type BoxOffice struct {
-	Budget uint64 `json:"budget"`
-	Gross uint64 `json:"gross"`
-}
-
 var monddbIurl = "mongodb://localhost:27017"
 func main() {
 	r := gin.Default()
@@ -39,7 +19,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
+	
 	r.GET("/", func(ctx *gin.Context) {
 		ctx.JSON(200, gin.H{
 			"message":"ok",
