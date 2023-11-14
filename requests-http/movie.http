@@ -1,0 +1,13 @@
+### variables
+@apiUrl = http://localhost:3000
+
+### CREATE post
+POST {{apiUrl}}/movie HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Poderoso chefão 5",
+    "year": "1972",
+    "director": "Francis Ford Coppola",
+    "writer":"Mario Puzo"
+}
